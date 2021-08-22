@@ -281,10 +281,12 @@ idb = {
                     console.log('esta logeado');
                     $("#fieldInicial").val(responseData[0].inicial);
                     $("#fieldIncremento").val(responseData[0].incremento);
+                    $("#fieldIncremento2").val(responseData[0].incremento2);
                 } else{
                     console.log('no esta logeado');
                     $("#fieldInicial").val(3);
                     $("#fieldIncremento").val(3);
+                    $("#fieldIncremento2").val(6);
                 }
             } else {
                 console.log("Error: no se pudo leer la tabla");

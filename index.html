@@ -103,6 +103,14 @@
 													<button class="btn btn-outline-secondary col-6 btnIncremento" value="-" type="button">-</button>
 												</div>
 											</div>
+
+											<div class="input-group">
+												<input type="number" id="fieldIncremento2" name="fieldIncremento2" class="form-control col-6" placeholder="Incremento" aria-label="Incremento" aria-describedby="inputGroup-sizing-default">
+												<div class="input-group-append col-6" style="padding-left: 0 !important;">
+													<button class="btn btn-outline-secondary col-6 btnIncremento2" value="+" type="button">+</button>
+													<button class="btn btn-outline-secondary col-6 btnIncremento2" value="-" type="button">-</button>
+												</div>
+											</div>
 										</div>
 									</div>
 								</div>
@@ -172,11 +180,24 @@
 				$(".btnIncremento").click(function(){
 					var inicial = $.trim($("#fieldInicial").val());
 					var incremento = $.trim($("#fieldIncremento").val());
+					var incremento2 = $.trim($("#fieldIncremento2").val());
 					if(inicial != ""){
 						nuevoInicial = parseInt(inicial) + parseInt($(this).val()+incremento);
 						$("#fieldInicial").val(nuevoInicial);
 
-						var insertInicial = {ID: 1, inicial: parseInt(nuevoInicial), incremento: parseInt(incremento)};
+						var insertInicial = {ID: 1, inicial: parseInt(nuevoInicial), incremento: parseInt(incremento), incremento2: parseInt(incremento2)};
+						idb.insert_inicial("inicial", insertInicial);
+					}					
+				})
+				$(".btnIncremento2").click(function(){
+					var inicial = $.trim($("#fieldInicial").val());
+					var incremento = $.trim($("#fieldIncremento").val());
+					var incremento2 = $.trim($("#fieldIncremento2").val());
+					if(inicial != ""){
+						nuevoInicial = parseInt(inicial) + parseInt($(this).val()+incremento2);
+						$("#fieldInicial").val(nuevoInicial);
+
+						var insertInicial = {ID: 1, inicial: parseInt(nuevoInicial), incremento: parseInt(incremento), incremento2: parseInt(incremento2)};
 						idb.insert_inicial("inicial", insertInicial);
 					}					
 				})
@@ -184,6 +205,7 @@
 					idb.limpiar_data("inicial", 1);
 					$("#fieldInicial").val(3);
                     $("#fieldIncremento").val(3);
+                    $("#fieldIncremento2").val(6);
 				})
 			})	
 		</script>
