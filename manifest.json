@@ -11,7 +11,7 @@
   "lang": "es-MX",
   "icons": [
     {
-      "src": "../assets/template/dist/assets/img/logo_452.png",
+      "src": "./assets/template/dist/assets/img/logo_452.png",
       "sizes": "452x452",
       "type": "image/png"
     }
